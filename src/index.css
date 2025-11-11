@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'Poppins';
+  src:
+    url('/fonts/Poppins-Bold.woff2') format('woff2'),
+    url('/fonts/Poppins-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src:
+    url('/fonts/Poppins-SemiBold.woff2') format('woff2'),
+    url('/fonts/Poppins-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src:
+    url('/fonts/Poppins-Medium.woff2') format('woff2'),
+    url('/fonts/Poppins-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src:
+    url('/fonts/Poppins-Regular.woff2') format('woff2'),
+    url('/fonts/Poppins-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@import 'tailwindcss';
+
+@theme {
+  /*===< Font Family >===*/
+  --font-display: 'Poppins', sans-serif;
+  /*===< Colors >===*/
+  --color-background: oklch(0.973 0.0133 286.1503);
+  --color-foreground: oklch(0.3015 0.0572 282.4176);
+  --color-primary: oklch(0.5417 0.179 288.0332);
+  --color-primary-foreground: oklch(1 0 0);
+  --color-border-defulat: oklch(0.9115 0.0216 285.9625);
+  --color-secondary: oklch(0.9174 0.0435 292.6901);
+  --color-secondary-foreground: oklch(0.4143 0.1039 288.1742);
+  --color-muted: oklch(0.958 0.0133 286.1454);
+  --color-muted-foreground: oklch(0.5426 0.0465 284.7435);
+  --color-list-marker: var(--color-primary);
+  --color-card: oklch(1 0 0);
+  --color-surface-selected: oklch(0.93 0.08 288);
+  --color-card-selected: oklch(0.7 0.15 288);
+  --color-hover-bg: oklch(0.94 0.025 288);
+  --color-shadow-selected: oklch(0.6 0.1 288 / 0.3);
+  --color-error: oklch(0.68 0.2 25);
+}
+
+@layer base {
+  * {
+    @apply border-border-defulat outline-none;
+  }
+  body {
+    @apply font-display bg-background text-foreground;
+  }
+  button {
+    cursor: pointer;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground rounded-full transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}
